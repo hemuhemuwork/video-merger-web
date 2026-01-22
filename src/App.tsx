@@ -91,7 +91,7 @@ function App() {
 
     setProgress('動画を読み込み中...')
 
-    const videoFiles: VideoFile[] = await Promise.all(
+    const newVideoFiles: VideoFile[] = await Promise.all(
       files.map(async (file) => ({
         id: crypto.randomUUID(),
         file,
@@ -101,12 +101,16 @@ function App() {
       }))
     )
 
-    // Sort by number prefix
-    videoFiles.sort((a, b) => extractNumber(a.name) - extractNumber(b.name))
-
-    setVideos(videoFiles)
+    setVideos(prev => {
+      const combined = [...prev, ...newVideoFiles]
+      combined.sort((a, b) => extractNumber(a.name) - extractNumber(b.name))
+      return combined
+    })
     setProgress('')
     setOutputUrl(null)
+
+    // Reset input to allow selecting the same files again
+    e.target.value = ''
   }
 
   const handleDrop = async (e: React.DragEvent) => {
@@ -116,7 +120,7 @@ function App() {
 
     setProgress('動画を読み込み中...')
 
-    const videoFiles: VideoFile[] = await Promise.all(
+    const newVideoFiles: VideoFile[] = await Promise.all(
       files.map(async (file) => ({
         id: crypto.randomUUID(),
         file,
@@ -126,9 +130,11 @@ function App() {
       }))
     )
 
-    videoFiles.sort((a, b) => extractNumber(a.name) - extractNumber(b.name))
-
-    setVideos(videoFiles)
+    setVideos(prev => {
+      const combined = [...prev, ...newVideoFiles]
+      combined.sort((a, b) => extractNumber(a.name) - extractNumber(b.name))
+      return combined
+    })
     setProgress('')
     setOutputUrl(null)
   }
