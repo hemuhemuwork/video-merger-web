@@ -1,0 +1,250 @@
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.drop-zone {
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #fafafa;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.drop-zone:hover {
+  border-color: #007aff;
+  background: #f0f7ff;
+}
+
+.drop-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.drop-icon {
+  font-size: 3rem;
+}
+
+.drop-hint {
+  font-size: 0.875rem;
+  color: #888;
+}
+
+.video-list {
+  margin-top: 2rem;
+}
+
+.video-list h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.video-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  cursor: grab;
+  transition: all 0.2s;
+}
+
+.video-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-item:active {
+  cursor: grabbing;
+  background: #f5f5f5;
+}
+
+.video-number {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #007aff;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.video-thumbnail {
+  width: 80px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #000;
+}
+
+.video-info {
+  flex: 1;
+  text-align: left;
+}
+
+.video-name {
+  display: block;
+  font-weight: 500;
+  color: #333;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+}
+
+.video-duration {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.remove-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: #ff3b30;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background 0.2s;
+}
+
+.remove-btn:hover {
+  background: #d62d23;
+}
+
+.settings {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.settings label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  color: #333;
+}
+
+.settings input[type="number"] {
+  width: 60px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.info {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.process-btn {
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  background: #007aff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.process-btn:hover:not(:disabled) {
+  background: #0066d6;
+}
+
+.process-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.progress {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #e8f4fd;
+  border-radius: 8px;
+  color: #007aff;
+  font-weight: 500;
+}
+
+.output {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f0fff4;
+  border-radius: 12px;
+  border: 1px solid #c6f6d5;
+}
+
+.output h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #2f855a;
+}
+
+.output-video {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  background: #000;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #38a169;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.download-btn:hover {
+  background: #2f855a;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 1rem;
+  }
+
+  .video-item {
+    flex-wrap: wrap;
+  }
+
+  .video-name {
+    max-width: 200px;
+  }
+}
